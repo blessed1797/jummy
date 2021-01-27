@@ -26,6 +26,4 @@ window.addEventListener('click', closeclick);
      if(e.target==nav){
          nav.style.display='none';
      }
- }
-
  
