@@ -11,20 +11,19 @@ body{
 
 }
 .icon{
-    border: 1px solid rgb(107, 109, 109);
     width:300px;
     height: 10%;
-    margin: 20px;
-    border-radius: 10px;
     padding:10px;
     text-transform: capitalize;
   font-weight: 700;
   font-size: 1rem;
   color: var(--clr-primary-1);
   letter-spacing: var(--spacing);
-  margin-right: 1rem;
   display:block;
-  background-color: rgb(83, 88, 88);
+
+}
+ul{
+    list-style: none;
 }
 a{
     text-decoration: none;
@@ -34,6 +33,7 @@ a{
 .icon:hover, .icon:focus{
     background-color: rgb(85, 84, 155);
     cursor: pointer;
+    width: 50px;
 }
 h1{
     font-size: 4rem;
@@ -43,95 +43,106 @@ h1{
      margin-bottom: 0.75rem;
     font-family: var(--ff-primary);
      text-align: center;
-     padding-top: 10%;
+     padding-top:10%;
      color: cornsilk;
-     
-
+     padding: 20px;
 }
-.about{
+span{
+    color: aquamarine;
+}
+.jum-jum{
     
     margin: auto;
-    width: 100px;
-    height: 30px;
-    border: 1px solid rgb(131, 206, 206);
-    padding: 10px;
-    border-radius:10px;
     font-family: var(--ff-primary);
     font-size: 1rem;
-    
+    color: bisque;
+    padding-top:5px;
+    padding-bottom:5px;
 
    
 }
-.about h3{
+.jum-jum h3{
     text-align: center;
     margin:0;
+    /* border: 1px soli d rgb(131, 206, 206); */
+    /* padding: 20px; */
+    border-radius:10px;
+    
 }
-
+#about-me{
+    border: 1px solid rgb(131, 206, 206);
+    padding: 10px;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+#about-me:hover{
+    border: 1px solid rgb(131, 206, 206);
+    padding: 10px;
+    background-color: aqua;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
 main{
     padding-top: 10%;
 }
 .btn{
-    /* background-color:  rgba(94, 189, 130, 0.4); */
-   /* padding:1em 2em;
-    border-radius: 10px;
-    border:0;
     height:50px ;
-    width: 100px; */
+    width: 100px;
     float: right;
-    margin-right: 20px;
-    padding: 10px;
-    border-radius: 10px;
     color: bisque;
     
 }
-.btn:hover{
-    background-color:  rgb(85, 84, 155);
-}
+
 .closebtn{
-    float:right;
     color: rgb(58, 47, 109);
     font-size: 40px;
-    border: 1px solid rgba(94, 189, 130, 0.4);
-    background-color:  rgba(94, 189, 130, 0.4);
     height: 40px;
     margin:10px;
     width: 30px;
     text-align: center;
     font-family: var(--ff-primary);
-    border-radius: 10px;
+    font-weight: 700;
     
 }
 .closebtn:hover, .closebtn:focus{
     background-color:  rgb(85, 84, 155);
     cursor: pointer;
+    
 
 }
 
 .navbar{
     display:inline-block;
 }
-#nav{
+nav{
     display: none;
-    background-color: bisque;
-    position: absolute;
-    /* width: 100%;
-    height: 100%; */
-    width: 400px;
-    height: 100vh;
 }
-.navlist{
-    list-style: none;
-    /* margin: auto;
+
+
+.navi2{
+    background-color:rgba(225, 235, 229, 0.4);
+    width: 200px;
+    animation-name: modalOpen;
+    animation-duration:3s;
+}
+
+@keyframes modalOpen{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+
+.myself{
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1.2em;
+    color: bisque;
     text-align: center;
-    margin: 0px; */
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    margin: 10px;
+    letter-spacing: var(--spacing);
 }
-.navlist:hover{
-    margin-left: 20px !important;
-    font-size: 30px;
-    font-weight: 900;
-    
+.myself-again{
+    text-align: center;
+    color: bisque;
+    padding:30px;
 }
+
+

@@ -1,42 +1,31 @@
-// const nav = document.getElementById("nav");
-// const butto = document.getElementById("btnn");
-// const closebtn = document.getElementsByClassName("closebtn") [0];
-// butto.addEventListener('click', openModal);
-const state = {
-    status: true
-};
+const nav = document.getElementById("nav");
+ const butto = document.getElementById("btn");
+ const closebtn = document.getElementsByClassName("closebtn") [0];
+// let icon = document.getElementById('btnn');
 
+//listen for open click
+  butto.addEventListener('click', openModal);
 
-console.log(state.status);
-// getElementByClassname('icons-show').addEventListener('click', Jummy);
-get
-function Jummy(){
-    let NewStatus = !state.status;
-    state.status = NewStatus;
-    console.log({status: state.status})
-    
-};
+  //listen for close click
+  closebtn.addEventListener('click', closeModal);
 
-if (Jummy.NewStatus){
-    btnn.style.display= 'none'
-}else{
-    btn.style.display= 'none'
-}
+  //listen for window close
+window.addEventListener('click', closeclick);
 
+//function for open click
+  function openModal(){
+      nav.style.display = 'block';
+      
+  }
+// function for close click
+  function closeModal(){
+    nav.style.display= 'none';
+  }
+ //function for window close
+ function closeclick(e){
+     if(e.target==nav){
+         nav.style.display='none';
+     }
+ }
 
-
-// function openModal(){
-//     nav.style.display = 'block';
-//     // btnn.style.display= 'none'
-
-// }
-
-// // console.log(openModal.status);
-// 
-// btnn.addEventListener('click', function(){
-//     icon.innerHTML = `<i style="font-size: 24px;" class="fas fa-times"></i>`
-//     console.log('working')
-//     var window.status = false;
-//     console.log(window.status);
-    
-// });
+ 
