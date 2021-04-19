@@ -1,29 +1,61 @@
-const nav = document.getElementById("nav");
- const butto = document.getElementById("btn");
- const closebtn = document.getElementsByClassName("closebtn") [0];
-// let icon = document.getElementById('btnn');
-
-//listen for open click
-  butto.addEventListener('click', openModal);
-
-  //listen for close click
-  closebtn.addEventListener('click', closeModal);
-
-  //listen for window close
-window.addEventListener('click', closeclick);
-
-//function for open click
-  function openModal(){
-      nav.style.display = 'block';
-      
+window.addEventListener('load',function(){
+    initSlider(
+      'slider', //id
+      ['Am a Frontend Developer','Am a data analyst','I love coding'], 
+      100, //duration
+      1000 //delay
+    );
+  });
+  
+  //just copy and paste below
+  var createText = function(text,id,duration){
+    document.getElementById(id).innerHTML = '';
+    for(let i = 0; i < text.length; i++){
+      setTimeout(()=>{
+        let newText = text.substr(0,(i+1));
+        document.getElementById(id).innerHTML = newText;
+      },duration*i);
+    }
   }
-// function for close click
-  function closeModal(){
-    nav.style.display= 'none';
+  var clearText = function(id,duration){
+    let text = document.getElementById(id).innerHTML;
+    for(let i = text.length; i > 0; i--){
+      setTimeout(()=>{
+        let newText = text.substr(0,text.length-i);
+        document.getElementById(id).innerHTML = newText;
+      },duration*i);
+    }
   }
- //function for window close
- function closeclick(e){
-     if(e.target==nav){
-         nav.style.display='none';
-     }
- 
+  var initSlider = function(id,texts,duration,delay){
+    let durs = [];
+    for(let i = 0; i < texts.length-1; i++){
+      let beforeDur;
+      if(i==0){
+        beforeDur = 0;
+      }
+      else{
+        beforeDur=durs[i-1];
+      }
+      durs.push((texts[i].length*duration*2) + (2*delay) + beforeDur);
+    }
+    
+    let allTime = 0;
+    for (let i = 0; i < texts.length; i++){
+      allTime += (texts[i].length*duration*2) + (2*delay);
+    }
+    let mainSlider = function(){
+      for(let i = 0; i < texts.length; i++){
+        setTimeout(()=>{
+          createText(texts[i],id,duration);
+          setTimeout(()=>{
+            clearText(id,duration);
+          },texts[i].length*duration + delay);
+        },i === 0 ? 0 : durs[i-1]);
+      }
+    }
+    mainSlider();
+    setInterval(()=>{
+      mainSlider();
+    },allTime);  
+  }
+  
