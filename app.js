@@ -1,7 +1,7 @@
 window.addEventListener('load',function(){
     initSlider(
       'slider', //id
-      ['Am a Frontend Developer','Am a data analyst','I love coding'], 
+      ["I'm a Frontend Developer","I'm a data analyst","I love coding"], 
       100, //duration
       1000 //delay
     );
